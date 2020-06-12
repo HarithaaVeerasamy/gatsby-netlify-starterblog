@@ -1,3 +1,9 @@
 {
-  "phone": "8489983472"
+  "phone": "8489983472",
+  "email": "haritha@navadhiti.com",
+  "address": {
+    "street": "123,south eve",
+    "street2": "12th cross",
+    "city": "San fransis"
+  }
 }
