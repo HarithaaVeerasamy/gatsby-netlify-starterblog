@@ -6,7 +6,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-
+import ContactInfo from '../../site/settings/contact_info.json'
+import ConfigDetails from '../../site/settings/config_details.json'
 type Data = {
   site: {
     siteMetadata: {
@@ -35,9 +36,10 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={ConfigDetails.company_name}>
       <SEO title="All posts" />
       <Bio />
+      {ContactInfo.phone}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

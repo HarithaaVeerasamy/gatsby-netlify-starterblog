@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import ContactInfo from '../../site/settings/contact_info.json'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -57,7 +58,8 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        {ContactInfo.email}
+        Written by <strong>{ContactInfo.email}</strong> {ContactInfo.address}
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           You should follow him on Twitter
